@@ -11,7 +11,12 @@
                 <td>{{ $book->body }}</td>
                 <td><a href="/book/{{ $book->id }}">Show</a></td>
                 <td><a href="/book/{{ $book->id }}/edit">Edit</a></td>
-                <td><a href="/book/{{ $book->id }}" rel="nofollow" data-method="delete">delete</a></td>
+                <td>
+                    <form action="/book/{{ $book->id }}" method="post">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button type='submit'><span>delete</span></button>
+                    </form>
+                </td>
                 
             </tr>
         @endforeach
