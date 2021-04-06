@@ -12,9 +12,10 @@
                 <td><a href="/book/{{ $book->id }}">Show</a></td>
                 <td><a href="/book/{{ $book->id }}/edit">Edit</a></td>
                 <td>
-                    <form action="/book/{{ $book->id }}" method="post">
+                    <form action="/book/{{ $book->id }}" method="post" style="margin: 0;">
+                        <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button type='submit'><span>delete</span></button>
+                        <button style="cursor: pointer; border:none; background: none; text-decoration: underline; font-size: 110%;" type='submit'><span>delete</span></button>
                     </form>
                 </td>
                 

@@ -21,7 +21,7 @@ class BookController extends Controller
         $book->body = $request->body;
         $book->save();
 
-        return redirect("/book");
+        return redirect("/books");
     }
 
     public function index()
@@ -44,21 +44,22 @@ class BookController extends Controller
         \Debugbar::info($book);
         return view('book/edit', compact('book'));
     }
-    public function update( $request, $id)
+    public function update(Request $request, $id)
     {
+        \Debugbar::info($request);
         $book = Book::find($id);
         $book->title = $request->title;
         $book->body = $request->body;
         $book->save();
 
-        return redirect("/book/{$id}");
+        return redirect("/books");
     }
 
     public function destroy(Request $request)
     {
         $book = Book::find($request->id);
         $book->delete();
-        return redirect("/book");
+        return redirect("/books");
     }
 
 }

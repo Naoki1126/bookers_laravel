@@ -18,9 +18,9 @@ use App\Http\Controllers\BookController;
 // });
 
 Route::get('/', [BookController::class, 'welcome']);
-Route::get('/book', [BookController::class, 'index']);
+Route::get('/books', [BookController::class, 'index']);
 Route::get('/book/{id}', [BookController::class, 'show']);
 Route::get('/book/{id}/edit', [BookController::class, 'edit']);
 Route::post('/book', [BookController::class, 'store']);
 Route::put('/book/{id}', [BookController::class, 'update']);
-Route::post('book/{id}',[BookController::class, 'destroy']);
+Route::delete('book/{id}',[BookController::class, 'destroy']);

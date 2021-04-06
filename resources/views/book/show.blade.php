@@ -6,5 +6,5 @@
     </p>
 </section>
 <div>
-    <a href="/book/{{ $book->id }}/edit">Edit</a>|<a href="/book">Back</a>
+    <a href="/book/{{ $book->id }}/edit">Edit</a>|<a href="/books">Back</a>
 </div>
